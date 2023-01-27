@@ -2,6 +2,7 @@ from search.algorithms import State
 from search.map import Map
 import getopt
 import sys
+import dijkstra
 
 def main():
     """
@@ -44,7 +45,7 @@ def main():
         start = start_states[i]
         goal = goal_states[i]
     
-        cost, expanded_diskstra = None, None # Implement here the call to your Dijkstra's implementation for start, goal, and gridded_map
+        cost, expanded_diskstra = dijkstra.run_dijkstra(start, goal, gridded_map)
 
         nodes_expanded_dijkstra.append(expanded_diskstra)
 
@@ -56,17 +57,17 @@ def main():
             print("Solution cost expected: ", solution_costs[i])
             print()
 
-        cost, expanded_astar = None, None # Implement here the call to your Bi-BS's implementation for start, goal, and gridded_map
+        # cost, expanded_astar = None, None # Implement here the call to your Bi-BS's implementation for start, goal, and gridded_map
 
-        nodes_expanded_bibs.append(expanded_astar)
+        # nodes_expanded_bibs.append(expanded_astar)
         
-        if cost != solution_costs[i]:
-            print("There is a mismatch in the solution cost found by Bi-HS and what was expected for the problem:")
-            print("Start state: ", start)
-            print("Goal state: ", goal)
-            print("Solution cost encountered: ", cost)
-            print("Solution cost expected: ", solution_costs[i])
-            print()
+        # if cost != solution_costs[i]:
+        #     print("There is a mismatch in the solution cost found by Bi-HS and what was expected for the problem:")
+        #     print("Start state: ", start)
+        #     print("Goal state: ", goal)
+        #     print("Solution cost encountered: ", cost)
+        #     print("Solution cost expected: ", solution_costs[i])
+        #     print()
     
     if plots:
         from search.plot_results import PlotResults
