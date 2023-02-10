@@ -102,7 +102,11 @@ MATE 201\\ \large{Class notes} % Document name
 \end{figure}
 \begin{enumerate}
   \item Why is the overall distribution of points in the plot the way it is?\\
+<<<<<<< HEAD
     The overall distribution of points in the plot are above the line meaning that in most cases, more nodes are expanded in the Dijkstra implementation compared to the Bi-BS implementation. The number of states in Dijkstra's algorithm can exponentially grow with the search depth until it finds the solution depth $C*$. In Bi-BS, we simultaneously search from the goal and start and the solution is found when the searches "meet in the middle". The solution depth for the start or goal in Bi-BS does not expand nodes with cost larger than $C*/2$, so it is not as large as that of Dijkstra for the same problem.
+=======
+    The overall distribution of points in the plot are above the line meaning that in most cases, more nodes are expanded in the Dijkstra implementation compared to the Bi-BS implementation. The number of states in Dijkstra's algorithm can exponentially grow with the search depth until it finds the solution depth $C*$. In Bi-BS, we simultaneously search from the goal and start and the solution is found when the searches meet in the middle. The solution depth for the start or goal in Bi-BS does not expand nodes with cost larger than $C*/2$, so it is not as large as that of Dijkstra for the same problem.
+>>>>>>> 05d5fc7504790d11cd84bd8aa2d7989430b656a6
   \item Why some of the points are clearly below the main diagonal?\\
     When we plot only the points where no solution was returned, we get the following plot where all of these data points are clearly below the diagonal. 
   \begin{figure}[H]
