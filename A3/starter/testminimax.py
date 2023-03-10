@@ -13,17 +13,22 @@ def minimax(board, player, ply):
 	2. the optimal move
 	3. the total number of nodes expanded to find the optimal move 
 	"""
+
 	if board.is_terminal():
 		return board.game_value(), 0, 1
 	
 	if ply == 0:
 		return 0, 0, 0
-	
+
 	if player == 'X':
 		score = -float("inf")
-		opt_n, moves, expansions = 0, 0, 0
+	else:
+		score = float("inf")
 
-		for n in board.available_moves():
+	opt_n, moves, expansions = 0, 0, 0
+	
+	for n in board.available_moves():
+		if player == 'X':
 			board.perform_move(n, player)
 			n_score, n_move, n_expansions = minimax(board, "O", ply-1)
 			opt_n += 1
@@ -34,12 +39,7 @@ def minimax(board, player, ply):
 			expansions += n_expansions
 
 			board.undo_move(n)
-		return score, moves, expansions
-	else:
-		score = float("inf")
-		opt_n, moves, expansions = 0, 0, 0
-
-		for n in board.available_moves():
+		else:
 			board.perform_move(n, player)
 			n_score, n_move, n_expansions = minimax(board, "X", ply-1)
 			opt_n += 1
@@ -50,8 +50,7 @@ def minimax(board, player, ply):
 			expansions += n_expansions
 
 			board.undo_move(n)
-			
-		return score, moves, expansions
+	return score, moves, expansions
 
 class TestMinMaxDepth1(unittest.TestCase):
 
@@ -202,6 +201,7 @@ class TestMinMaxDepth5(unittest.TestCase):
 		b = Board()
 		player = b.create_board('336604464463')
 		bestScore, bestMove, expansions = minimax(b, player, 5)
+		print(expansions)
 		self.assertEqual(bestScore, 1)
 		self.assertEqual(bestMove, 3)		
 
