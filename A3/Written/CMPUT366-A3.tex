@@ -96,8 +96,14 @@ MATE 201\\ \large{Class notes} % Document name
 \section*{Questions for assignment 3}
 
 \begin{enumerate}
-  \item Minimax expanded 1266 states while alpha-beta expanded 11 states
-  \item 
+  \item Minimax expanded 17606 states while alpha-beta expanded 1413 states
+  \item Based on the game state, if X plays sub-optimally, it is possible that O can win the game. Here are some scenarios (we assume the columns from left to right and numbered 0-6):
+  \begin{enumerate}
+    \item If X plays col 2, then O can play col 2, and X can play in any col between 2-6, and O can win by playing in col 1 and connect diagonally across cols 1-4
+    \item If X plays in col 4, O can play in col 3, X can play in col 4 again, and O can win by playing in col 3 again and connecting vertically in col 3
+  \end{enumerate}
+  These are just a few examples, but there are many other ways that player O can win if player X plays sub-optimally; however, if player X plays optimally, then it is very difficult for player O to win the game.
+
   \item In general, typically they do not expand the same number of nodes since the Alpha-Beta algorithm is designed to prune branches of the search tree that do not lead to a better result than what has already been found. This usually results in the Alpha-Beta algorithm to expand fewer nodes than the Minimax algorithm. However, under certain conditions, is it possible for the two algorithms to expand the same number of nodes. One such condition is when the Alpha-Beta algorithm is unable to prune any branches because of the order in which the moves are considered.
 \end{enumerate}
 \end{document}

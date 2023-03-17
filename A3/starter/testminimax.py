@@ -15,7 +15,7 @@ def minimax(board, player, ply):
 	"""
 
 	if board.is_terminal():
-		return board.game_value(), 0, 1
+		return board.game_value(), 0, 0
 	
 	if ply == 0:
 		return 0, 0, 0
@@ -25,31 +25,26 @@ def minimax(board, player, ply):
 	else:
 		score = float("inf")
 
-	opt_n, moves, expansions = 0, 0, 0
+	moves, expansions = 0, 0
 	
 	for n in board.available_moves():
+		board.perform_move(n, player)
 		if player == 'X':
-			board.perform_move(n, player)
 			n_score, n_move, n_expansions = minimax(board, "O", ply-1)
-			opt_n += 1
+			expansions += n_expansions + 1
 
 			if n_score > score:
 				score = n_score
-				moves = opt_n - 1
-			expansions += n_expansions
-
-			board.undo_move(n)
+				moves = n
 		else:
-			board.perform_move(n, player)
 			n_score, n_move, n_expansions = minimax(board, "X", ply-1)
-			opt_n += 1
+			expansions += n_expansions + 1
 
 			if n_score < score:
 				score = n_score
-				moves = opt_n - 1
-			expansions += n_expansions
+				moves = n
 
-			board.undo_move(n)
+		board.undo_move(n)
 	return score, moves, expansions
 
 class TestMinMaxDepth1(unittest.TestCase):
@@ -201,7 +196,6 @@ class TestMinMaxDepth5(unittest.TestCase):
 		b = Board()
 		player = b.create_board('336604464463')
 		bestScore, bestMove, expansions = minimax(b, player, 5)
-		print(expansions)
 		self.assertEqual(bestScore, 1)
 		self.assertEqual(bestMove, 3)		
 

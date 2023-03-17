@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.2)  9 MAR 2023 19:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.2.2)  16 MAR 2023 21:43
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1012,17 +1012,17 @@ Package caption Info: End \AtBeginDocument code.
 
 ] (CMPUT366-A3.aux) ) 
 Here is how much of TeX's memory you used:
- 28954 strings out of 478593
- 553807 string characters out of 2845077
- 1041841 words of memory out of 3000000
+ 28956 strings out of 478593
+ 553819 string characters out of 2845077
+ 1045841 words of memory out of 3000000
  46629 multiletter control sequences out of 15000+600000
  470316 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,11n,111p,638b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Users/Lora/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lora/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lora/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on CMPUT366-A3.pdf (1 page, 43177 bytes).
+Output written on CMPUT366-A3.pdf (1 page, 46229 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 5 named destinations out of 1000 (max. 500000)
+ 36 PDF objects out of 1000 (max. 8388607)
+ 7 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
